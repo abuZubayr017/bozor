@@ -9,7 +9,7 @@ export default function Notes() {
   }, []);
 
   const getNotes = async () => {
-    const response = await fetch("http://localhost:5000/notes");
+    const response = await fetch("http://localhost:3001/notes");
     const data = await response.json();
     setNotes(data);
   };

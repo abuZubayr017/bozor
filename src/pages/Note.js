@@ -13,13 +13,13 @@ export default function Note(props) {
   }, [noteId]);
 
   const getNote = async () => {
-    const response = await fetch(`http://localhost:5000/notes/${noteId}`);
+    const response = await fetch(`http://localhost:3001/notes/${noteId}`);
     const data = await response.json();
     setNote(data);
   };
 
   const createNote = async () => {
-    await fetch(`http://localhost:5000/notes/`, {
+    await fetch(`http://localhost:3001/notes`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export default function Note(props) {
   };
 
   const updateNote = async () => {
-    await fetch(`http://localhost:5000/notes/${noteId}`, {
+    await fetch(`http://localhost:3001/notes/${noteId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export default function Note(props) {
   };
 
   const deleteNote = async () => {
-    await fetch(`http://localhost:5000/notes/${noteId}`, {
+    await fetch(`http://localhost:3001/notes/${noteId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
